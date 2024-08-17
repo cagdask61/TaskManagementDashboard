@@ -1,0 +1,17 @@
+<aside class="w-full h-full bg-white">
+    <header class="flex flex-row items-center gap-x-3 p-8">
+        <img src="/ck.png" width="40" height="40" class="rounded-xl" />
+        <h1 class="font-semibold text-[#141522] text-2xl">Company</h1>
+    </header>
+    <div class="flex flex-col items-center gap-y-6">
+        @for (link of links; track $index) {
+        <button [routerLink]="link.path" routerLinkActive="sidenav-routes-active"
+            class="grid grid-cols-12 w-[188px] h-11 rounded-xl">
+            <div class="col-span-4 w-full h-full flex items-center justify-center" [innerHTML]="link.icon"></div>
+            <div class="col-span-8 w-full h-full flex items-center">
+                <span class="text-[#8E92BC] font-semibold">{{link.text}}</span>
+            </div>
+        </button>
+        }
+    </div>
+</aside>
